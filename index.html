@@ -10,14 +10,14 @@
     <style>
         .inner-div {
             background-color: rgb(241, 241, 241);
-            box-shadow: 0px 0px 23px 1px gray;
+            box-shadow: 3px 3px 11px 0px gray;
             padding: 30px;
             border-radius: 30px;
         }
 
         @media (max-width: 992px) {
             .table {
-                max-width: 100% !important;
+                max-width: 90% !important;
             }
         }
 
@@ -26,37 +26,36 @@
             max-width: 70%;
         }
 
-        nav {
-            border-radius: 50px 0px 50px 0px;
+        .table-scroll {
+            overflow: scroll;
+            padding: 10px;
         }
     </style>
 </head>
 
 <body>
-    <nav class="container bg-primary p-3 mt-5">
-        <div class="w-100 text-center text-white">
-            <h1>Registration Form</h1>
-        </div>
-    </nav>
     <div class="container mt-5">
         <div class="d-flex justify-content-center align-items-center main-div mb-5">
             <div class="inner-div">
+                <div class="w-100 text-center text-primary mb-4">
+                    <h1>Registration Form</h1>
+                </div>
                 <form>
-                    <label class="form-label fw-bold text-primary">First and last name*</label>
+                    <label class="form-label fw-bold text-dark">First and last name*</label>
                     <div class="input-group mb-4 border-dark">
                         <input type="text" aria-label="First name" name="FName" id="FName"
                             class="form-control border-info" required>
                         <input type="text" aria-label="Last name" name="LName" id="LName"
                             class="form-control border-info" required>
                     </div>
-                    <label class="form-label fw-bold text-primary">Age and Mobile No.*</label>
+                    <label class="form-label fw-bold text-dark">Age and Mobile No.*</label>
                     <div class="input-group mb-4 border-dark">
                         <input type="text" aria-label="Age" name="Age" id="Age" class="form-control border-info"
                             required>
                         <input type="text" aria-label="Mob" name="Mob" id="Mob" class="form-control border-info"
                             required>
                     </div>
-                    <label class="form-ilabel fw-bold text-primary" id="inputGroup-sizing-sm">Email*</label>
+                    <label class="form-ilabel fw-bold text-dark" id="inputGroup-sizing-sm">Email*</label>
                     <div class="input-group mb-4 border-dark">
                         <input type="email" class="form-control border-info" name="Email" id="Email" aria-label="Email"
                             aria-describedby="inputGroup-sizing-sm" required>
@@ -69,10 +68,10 @@
                 </form>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <table class="table table-bordered border-dark text-center" id="show_table">
-                <thead class="bg-dark text-white">
-                    <tr>
+        <div class="row justify-content-center table-scroll">
+            <table class="table table-bordered border-primary text-center" id="show_table">
+                <thead class="text-dark">
+                    <tr class="table-primary border-primary">
                         <th scope="col" colspan="2">Name</th>
                         <th scope="col">Age</th>
                         <th scope="col">Mobile No.</th>
@@ -82,9 +81,7 @@
             </table>
         </div>
     </div>
-    <footer class="fixed-bottom text-center fs-6 fw-bolder bg-default">
-        CopyRight &copy All rights Reserved.
-    </footer>
+
     <script>
         var list0 = [];
         var list1 = [];
@@ -119,6 +116,13 @@
 
             n++;
             x++;
+
+            // Clear form fields
+            document.getElementById("FName").value = "";
+            document.getElementById("LName").value = "";
+            document.getElementById("Age").value = "";
+            document.getElementById("Mob").value = "";
+            document.getElementById("Email").value = "";
         }
     </script>
 </body>
